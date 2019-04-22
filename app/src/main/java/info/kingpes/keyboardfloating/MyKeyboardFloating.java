@@ -3,6 +3,7 @@ package info.kingpes.keyboardfloating;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.CornerPathEffect;
@@ -20,6 +21,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import java.lang.reflect.Method;
 
@@ -34,7 +36,7 @@ public class MyKeyboardFloating extends KeyboardView {
     private static int width;
     private static Path mHandlePath;
     private static Paint mHandlePaint;
-    private static boolean allignBottomCenter = false;
+    private static boolean alignBottomCenter = false;
 
     private int resids;
 
@@ -226,20 +228,19 @@ public class MyKeyboardFloating extends KeyboardView {
 
     }
 
-    public static boolean isAllignBottomCenter() {
-        return allignBottomCenter;
+    private boolean isAlignBottomCenter() {
+        return alignBottomCenter;
     }
 
-    public static void setAlignBottomCenter(boolean allignBottomCenter) {
-        MyKeyboardFloating.allignBottomCenter = allignBottomCenter;
+    public void setAlignBottomCenter(boolean allignBottomCenter) {
+        MyKeyboardFloating.alignBottomCenter = allignBottomCenter;
     }
 
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        if (isAllignBottomCenter()) {
+        if (isAlignBottomCenter()) {
             RelativeLayout.LayoutParams relativeLayoutParams = (RelativeLayout.LayoutParams) getLayoutParams();
-
             //relativeLayoutParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
             //relativeLayoutParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
 
@@ -276,14 +277,13 @@ public class MyKeyboardFloating extends KeyboardView {
         Paint paint = mHandlePaint;
         Path path = mHandlePath;
         canvas.drawPath(path, paint);
-
     }
 
     public boolean isVisible() {
         return this.getVisibility() == View.VISIBLE;
     }
 
-    public void show(View v) {
+    public void show() {
         this.setVisibility(View.VISIBLE);
         this.setEnabled(true);
     }

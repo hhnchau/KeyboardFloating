@@ -1,37 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/edt"
+    <LinearLayout
+        android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/edt1"
+        <EditText
+            android:id="@+id/edt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Hello World!" />
+
+        <EditText
+            android:id="@+id/edt1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Hello World!" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear"
+        android:text="OK"/>
+
+    <!--<info.kingpes.keyboardfloating.MyKeyboardFloating-->
+        <!--android:id="@+id/keyboardview"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@android:color/transparent"-->
+        <!--android:elevation="1dp"-->
+        <!--android:focusable="true"-->
+        <!--android:focusableInTouchMode="true"-->
+        <!--android:keyBackground="@drawable/keybackground"-->
+        <!--android:keyTextColor="#384850"-->
+        <!--android:shadowRadius="0.0"-->
+        <!--android:visibility="gone" />-->
+
+
+    <info.kingpes.keyboardfloating.MyKeyboard
+        android:id="@+id/myKeyboard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:layout_below="@id/edt" />
-
-
-    <info.kingpes.keyboardfloating.MyKeyboardFloating
-        android:id="@+id/keyboardview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:visibility="gone"
-        android:keyTextColor="#384850"
         android:keyBackground="@drawable/keybackground"
+        android:keyTextColor="#384850"
         android:shadowRadius="0.0"
-        android:background="@android:color/transparent"
-        android:elevation="1dp"/>
+        android:visibility="gone" />
 
 
 </RelativeLayout>

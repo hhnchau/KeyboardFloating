@@ -1,7 +1,7 @@
 <Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
     android:keyWidth="10%p"
-    android:horizontalGap="0px"
-    android:verticalGap="0px"
+    android:horizontalGap="1px"
+    android:verticalGap="1px"
     android:keyHeight="60dp"
     >
     <Row>
@@ -29,7 +29,7 @@
         <Key android:codes="112" android:keyLabel="p" android:keyEdgeFlags="right"/>
     </Row>
     <Row>
-        <Key android:codes="97" android:keyLabel="a" android:keyEdgeFlags="left"/>
+        <Key android:codes="97,226" android:keyLabel="a" android:keyEdgeFlags="left"/>
         <Key android:codes="115" android:keyLabel="s"/>
         <Key android:codes="100" android:keyLabel="d"/>
         <Key android:codes="102" android:keyLabel="f"/>
